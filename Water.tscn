@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://WaterArea.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3887.3, 32.6053 )
+
+[node name="WaterArea" type="StaticBody2D"]
+visible = false
+position = Vector2( 6.02368, -31.3329 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 3115.52, 630 )
+shape = SubResource( 1 )
+
+[node name="WaterArea" parent="." instance=ExtResource( 1 )]
+position = Vector2( -13.4695, 54.4734 )
+scale = Vector2( 6, 1 )

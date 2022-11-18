@@ -1,0 +1,884 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://img/water/vc.png" type="Texture" id=1]
+[ext_resource path="res://img/water/vd.png" type="Texture" id=2]
+[ext_resource path="res://img/water/va.png" type="Texture" id=3]
+[ext_resource path="res://img/water/vb.png" type="Texture" id=4]
+[ext_resource path="res://music/val finv2.wav" type="AudioStream" id=5]
+[ext_resource path="res://IntroValen.tscn" type="PackedScene" id=6]
+[ext_resource path="res://OutroValen.gd" type="Script" id=7]
+[ext_resource path="res://OutroVectorCreator.tscn" type="PackedScene" id=8]
+[ext_resource path="res://img/outro_bg.png" type="Texture" id=9]
+[ext_resource path="res://img/title.png" type="Texture" id=10]
+[ext_resource path="res://img/egen_par/pb.png" type="Texture" id=11]
+[ext_resource path="res://img/egen_par/pa.png" type="Texture" id=12]
+[ext_resource path="res://img/bonus.png" type="Texture" id=13]
+[ext_resource path="res://Star1.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Star2.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Star2.gd" type="Script" id=16]
+[ext_resource path="res://Star3.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Star4.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Star5.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Star6.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Star7.tscn" type="PackedScene" id=21]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1520.85, 117.667 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1609.41, 10 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 342.84, 3431.72 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 1558.96, 156.454 )
+
+[node name="Outro" type="Node2D"]
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 355.578, -1815.01 )
+texture = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 523.499, 221.144 )
+texture = ExtResource( 13 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+visible = false
+position = Vector2( 437.827, 181.539 )
+texture = ExtResource( 11 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+visible = false
+position = Vector2( 395.113, 213.574 )
+texture = ExtResource( 12 )
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="GreenStar" type="Node2D" parent="Objects"]
+
+[node name="Star1" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( 410.536, -146.834 )
+
+[node name="Star2" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( 783.576, -288.113 )
+
+[node name="Star3" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( 96.2309, -281.763 )
+
+[node name="Star4" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( -314.9, -161.628 )
+
+[node name="Star5" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( 1113.38, -121.582 )
+
+[node name="Star6" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( 1145.41, -514.025 )
+
+[node name="Star7" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( 624.827, -700.903 )
+
+[node name="Star8" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( -189.425, -855.744 )
+
+[node name="Star9" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( 483.334, -1031.94 )
+
+[node name="Star10" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( -243.2, -1385.12 )
+
+[node name="Star11" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( 1051.78, -1479.3 )
+
+[node name="Star12" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( 520.334, -2014.11 )
+
+[node name="Star13" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( 1071.96, -1058.85 )
+
+[node name="Star14" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( 338.7, -1556.66 )
+
+[node name="Star15" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( -226.382, -2061.2 )
+
+[node name="Star16" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( 1092.14, -2030.93 )
+
+[node name="Star17" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( 1028.23, -2511.92 )
+
+[node name="Star18" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( 314.349, -2606.21 )
+
+[node name="Star19" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( -345.659, -3167.44 )
+
+[node name="Star20" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( 1001.3, -3540.1 )
+
+[node name="Star21" parent="Objects/GreenStar" instance=ExtResource( 14 )]
+position = Vector2( 314.349, -3562.55 )
+
+[node name="PinkStar" type="Node2D" parent="Objects"]
+
+[node name="Star1" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( 555.293, -288.326 )
+script = ExtResource( 16 )
+
+[node name="Star2" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( 181.538, 64.0718 )
+script = ExtResource( 16 )
+
+[node name="Star3" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( -331.04, -352.398 )
+script = ExtResource( 16 )
+
+[node name="Star4" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( -395.112, 85.4292 )
+script = ExtResource( 16 )
+
+[node name="Star5" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( 1099.91, 192.217 )
+script = ExtResource( 16 )
+
+[node name="Star6" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( 907.692, -491.221 )
+script = ExtResource( 16 )
+
+[node name="Star7" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( 245.611, -662.081 )
+script = ExtResource( 16 )
+
+[node name="Star8" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( -309.682, -1046.51 )
+script = ExtResource( 16 )
+
+[node name="Star9" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( 160.182, -1206.7 )
+script = ExtResource( 16 )
+
+[node name="Star10" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( 683.439, -1302.8 )
+script = ExtResource( 16 )
+
+[node name="Star11" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( 832.941, -1836.74 )
+script = ExtResource( 16 )
+
+[node name="Star12" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( 160.182, -1911.49 )
+script = ExtResource( 16 )
+
+[node name="Star13" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( -352.396, -1804.7 )
+script = ExtResource( 16 )
+
+[node name="Star14" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( -309.681, -2349.32 )
+script = ExtResource( 16 )
+
+[node name="Star15" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( 128.146, -2253.21 )
+script = ExtResource( 16 )
+
+[node name="Star16" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( 822.263, -2263.89 )
+script = ExtResource( 16 )
+
+[node name="Star17" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( 1121.27, -2915.29 )
+script = ExtResource( 16 )
+
+[node name="Star18" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( 598.01, -3128.87 )
+script = ExtResource( 16 )
+
+[node name="Star19" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( -10.6772, -2958.01 )
+script = ExtResource( 16 )
+
+[node name="Star20" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( -213.573, -3545.34 )
+script = ExtResource( 16 )
+
+[node name="Star21" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( 854.299, -3865.7 )
+script = ExtResource( 16 )
+
+[node name="Star22" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( -352.396, -4143.34 )
+script = ExtResource( 16 )
+
+[node name="Star23" parent="Objects/PinkStar" instance=ExtResource( 15 )]
+position = Vector2( 1025.16, -4132.67 )
+script = ExtResource( 16 )
+
+[node name="Green2Star" type="Node2D" parent="Objects"]
+
+[node name="Star1" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+
+[node name="Star2" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( -245.61, 277.647 )
+
+[node name="Star3" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( 1035.84, -747.51 )
+
+[node name="Star4" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( 1142.62, -331.04 )
+
+[node name="Star5" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( 939.728, 117.466 )
+
+[node name="Star6" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( -74.751, -565.972 )
+
+[node name="Star7" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( -373.755, -790.225 )
+
+[node name="Star8" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( 202.896, -961.084 )
+
+[node name="Star9" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( 459.185, -1345.52 )
+
+[node name="Star10" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( 726.153, -918.369 )
+
+[node name="Star11" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( 993.121, -1238.73 )
+
+[node name="Star12" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( 918.37, -1633.84 )
+
+[node name="Star13" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( 619.366, -1623.16 )
+
+[node name="Star14" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( -149.502, -1665.88 )
+
+[node name="Star15" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( 74.751, -1495.02 )
+
+[node name="Star16" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( 21.3574, -2060.99 )
+
+[node name="Star17" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( 779.546, -2605.61 )
+
+[node name="Star18" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( 469.864, -2295.92 )
+
+[node name="Star19" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( -64.0723, -2594.93 )
+
+[node name="Star20" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( -331.04, -2861.9 )
+
+[node name="Star21" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( 395.113, -2968.68 )
+
+[node name="Star22" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( 42.7148, -3246.33 )
+
+[node name="Star23" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( 918.37, -3235.65 )
+
+[node name="Star24" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( 587.33, -3534.66 )
+
+[node name="Star25" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( -149.502, -3758.91 )
+
+[node name="Star26" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( 651.402, -4175.38 )
+
+[node name="Star27" parent="Objects/Green2Star" instance=ExtResource( 17 )]
+position = Vector2( 42.7148, -4207.42 )
+
+[node name="BlueStar" type="Node2D" parent="Objects"]
+
+[node name="Star1" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 10.6787, 256.29 )
+
+[node name="Star2" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( -224.253, 160.181 )
+
+[node name="Star3" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( -202.896, -160.18 )
+
+[node name="Star4" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 427.149, -395.112 )
+
+[node name="Star5" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 1249.41, 32.0366 )
+
+[node name="Star6" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 779.546, 0.000488281 )
+
+[node name="Star7" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 939.728, -288.325 )
+
+[node name="Star8" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 672.759, -480.542 )
+
+[node name="Star9" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 790.225, -683.438 )
+
+[node name="Star10" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 202.896, -469.863 )
+
+[node name="Star11" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 21.3574, -790.225 )
+
+[node name="Star12" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( -331.04, -630.044 )
+
+[node name="Star13" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( -448.506, -1249.41 )
+
+[node name="Star14" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( -117.466, -1099.91 )
+
+[node name="Star15" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 822.261, -1067.87 )
+
+[node name="Star16" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 1174.66, -897.012 )
+
+[node name="Star17" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 1228.05, -1238.73 )
+
+[node name="Star18" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 1206.7, -1655.2 )
+
+[node name="Star19" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 1057.19, -1847.42 )
+
+[node name="Star20" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 694.117, -1996.92 )
+
+[node name="Star21" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 277.646, -2157.1 )
+
+[node name="Star22" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( -96.1089, -2349.32 )
+
+[node name="Star23" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( -309.683, -2605.61 )
+
+[node name="Star24" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 875.654, -2883.25 )
+
+[node name="Star25" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 576.65, -2744.43 )
+
+[node name="Star26" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 405.791, -3289.04 )
+
+[node name="Star27" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 181.538, -3011.4 )
+
+[node name="Star28" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( -160.181, -3310.4 )
+
+[node name="Star29" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( -427.149, -3620.08 )
+
+[node name="Star30" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( -245.611, -3972.48 )
+
+[node name="Star31" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 96.1079, -3716.19 )
+
+[node name="Star32" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 619.365, -3748.23 )
+
+[node name="Star33" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 1174.66, -3673.48 )
+
+[node name="Star34" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 1174.66, -3310.4 )
+
+[node name="Star35" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 790.225, -3406.51 )
+
+[node name="Star36" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 790.225, -3406.51 )
+
+[node name="Star37" parent="Objects/BlueStar" instance=ExtResource( 18 )]
+position = Vector2( 1228.05, -4004.52 )
+
+[node name="GulStar" type="Node2D" parent="Objects"]
+
+[node name="Star1" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 543.058, 33.9409 )
+
+[node name="Star2" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 1267.14, 214.96 )
+
+[node name="Star3" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 1267.14, -520.431 )
+
+[node name="Star4" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 1018.23, -350.725 )
+
+[node name="Star5" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 769.333, -384.667 )
+
+[node name="Star6" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 452.548, -588.313 )
+
+[node name="Star7" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 260.215, -294.157 )
+
+[node name="Star8" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( -79.1958, -328.098 )
+
+[node name="Star9" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( -158.392, -22.6274 )
+
+[node name="Star10" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( -418.607, -135.765 )
+
+[node name="Star11" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( -463.862, -441.235 )
+
+[node name="Star12" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( -192.333, -463.862 )
+
+[node name="Star13" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 113.138, -690.136 )
+
+[node name="Star14" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 429.921, -791.959 )
+
+[node name="Star15" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 712.764, -1108.74 )
+
+[node name="Star16" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 939.039, -961.665 )
+
+[node name="Star17" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 848.529, -1368.96 )
+
+[node name="Star18" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 1165.31, -1368.96 )
+
+[node name="Star19" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 305.471, -1142.68 )
+
+[node name="Star20" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 203.648, -1414.21 )
+
+[node name="Star21" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( -101.822, -1233.19 )
+
+[node name="Star22" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( -407.292, -1516.04 )
+
+[node name="Star23" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( -169.705, -1436.84 )
+
+[node name="Star24" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 384.667, -1787.57 )
+
+[node name="Star25" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 90.5107, -1674.43 )
+
+[node name="Star26" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( -135.763, -1912.02 )
+
+[node name="Star27" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( -407.292, -1991.21 )
+
+[node name="Star28" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( -463.861, -2308 )
+
+[node name="Star29" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 554.373, -2409.82 )
+
+[node name="Star30" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 1142.69, -2262.74 )
+
+[node name="Star31" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 1187.94, -2556.9 )
+
+[node name="Star32" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 1018.24, -2771.86 )
+
+[node name="Star33" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 1018.24, -3066.01 )
+
+[node name="Star34" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 181.021, -2794.49 )
+
+[node name="Star35" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 181.021, -3258.35 )
+
+[node name="Star36" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( -441.233, -3382.8 )
+
+[node name="Star37" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( -22.626, -3495.94 )
+
+[node name="Star38" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 271.53, -3767.47 )
+
+[node name="Star39" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 803.275, -3643.01 )
+
+[node name="Star40" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 1052.18, -3846.66 )
+
+[node name="Star41" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 791.961, -4061.62 )
+
+[node name="Star42" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( -67.8809, -3914.54 )
+
+[node name="Star43" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( -452.547, -3869.29 )
+
+[node name="Star44" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 339.413, -4197.39 )
+
+[node name="Star45" parent="Objects/GulStar" instance=ExtResource( 19 )]
+position = Vector2( 339.413, -4197.39 )
+
+[node name="RedStar" type="Node2D" parent="Objects"]
+
+[node name="Star1" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 384.666, 11.3135 )
+
+[node name="Star2" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( -67.8823, 79.1958 )
+
+[node name="Star3" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( -475.176, -79.1963 )
+
+[node name="Star4" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( -135.765, -248.902 )
+
+[node name="Star5" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 441.234, -305.47 )
+
+[node name="Star6" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 1233.19, -260.216 )
+
+[node name="Star7" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 1006.92, -610.94 )
+
+[node name="Star8" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 531.744, -486.49 )
+
+[node name="Star9" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 101.823, -565.686 )
+
+[node name="Star10" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( -147.079, -735.392 )
+
+[node name="Star11" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( -418.608, -950.352 )
+
+[node name="Star12" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( -418.608, -950.352 )
+
+[node name="Star13" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 45.2544, -1040.86 )
+
+[node name="Star14" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 350.725, -871.156 )
+
+[node name="Star15" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 543.058, -1210.57 )
+
+[node name="Star16" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 746.704, -1516.04 )
+
+[node name="Star17" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 475.175, -1674.43 )
+
+[node name="Star18" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 1244.51, -1832.82 )
+
+[node name="Star19" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 848.528, -2070.41 )
+
+[node name="Star20" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 531.744, -1855.45 )
+
+[node name="Star21" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 543.058, -2172.23 )
+
+[node name="Star22" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 192.333, -2421.13 )
+
+[node name="Star23" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( -214.961, -2206.17 )
+
+[node name="Star24" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( -486.49, -2534.27 )
+
+[node name="Star25" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( -181.02, -2726.6 )
+
+[node name="Star26" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( -181.02, -3020.76 )
+
+[node name="Star27" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 701.449, -3054.7 )
+
+[node name="Star28" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 1233.19, -3473.31 )
+
+[node name="Star29" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 203.646, -3473.31 )
+
+[node name="Star30" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 429.92, -3812.72 )
+
+[node name="Star31" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( -135.765, -4174.76 )
+
+[node name="Star32" parent="Objects/RedStar" instance=ExtResource( 20 )]
+position = Vector2( 1244.51, -4265.27 )
+
+[node name="OrangeStar" type="Node2D" parent="Objects"]
+
+[node name="Star1" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 282.842, -113.137 )
+
+[node name="Star2" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 678.822, -135.765 )
+
+[node name="Star3" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 1029.55, 11.3135 )
+
+[node name="Star4" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 1018.23, -452.549 )
+
+[node name="Star5" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 769.332, -509.117 )
+
+[node name="Star6" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 271.529, -429.921 )
+
+[node name="Star7" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 22.6274, -362.04 )
+
+[node name="Star8" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( -404.521, -233.895 )
+
+[node name="Star9" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( -287.056, 22.3945 )
+
+[node name="Star10" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( -489.951, -639.686 )
+
+[node name="Star11" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( -511.309, 268.005 )
+
+[node name="Star12" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 108.057, -757.152 )
+
+[node name="Star13" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( -126.875, -895.976 )
+
+[node name="Star14" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( -319.092, -1184.3 )
+
+[node name="Star15" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( -297.734, -1611.45 )
+
+[node name="Star16" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 11.9487, -1376.52 )
+
+[node name="Star17" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 214.844, -1739.59 )
+
+[node name="Star18" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 535.206, -1451.27 )
+
+[node name="Star19" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 695.387, -1792.99 )
+
+[node name="Star20" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 1005.07, -1686.2 )
+
+[node name="Star21" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 940.997, -1995.88 )
+
+[node name="Star22" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 994.391, -2188.1 )
+
+[node name="Star23" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 876.925, -2423.03 )
+
+[node name="Star24" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 695.387, -2348.28 )
+
+[node name="Star25" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 535.206, -2615.25 )
+
+[node name="Star26" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 332.31, -2380.32 )
+
+[node name="Star27" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 97.3784, -2636.61 )
+
+[node name="Star28" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 43.9849, -2444.39 )
+
+[node name="Star29" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( -436.558, -2850.18 )
+
+[node name="Star30" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( -169.59, -2519.14 )
+
+[node name="Star31" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( -105.518, -2828.82 )
+
+[node name="Star32" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 385.703, -2754.07 )
+
+[node name="Star33" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 770.137, -2796.79 )
+
+[node name="Star34" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 599.278, -2946.29 )
+
+[node name="Star35" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 342.988, -3149.19 )
+
+[node name="Star36" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 631.314, -3277.33 )
+
+[node name="Star37" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 449.775, -3501.58 )
+
+[node name="Star38" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( -393.843, -3053.08 )
+
+[node name="Star39" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( -255.02, -3405.48 )
+
+[node name="Star40" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 86.6992, -3554.98 )
+
+[node name="Star41" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 1240, -2743.39 )
+
+[node name="Star42" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 1261.36, -2423.03 )
+
+[node name="Star43" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 1272.04, -2049.28 )
+
+[node name="Star44" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 1240, -3106.47 )
+
+[node name="Star45" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 1047.78, -3416.15 )
+
+[node name="Star46" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 1272.04, -3843.3 )
+
+[node name="Star47" parent="Objects/OrangeStar" instance=ExtResource( 21 )]
+position = Vector2( 1272.04, -3843.3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -7.0
+autoplay = true
+
+[node name="Whale" parent="." instance=ExtResource( 6 )]
+position = Vector2( 527.412, 438.322 )
+gravity_scale = 5.0
+script = ExtResource( 7 )
+
+[node name="Camera2D" type="Camera2D" parent="Whale"]
+offset = Vector2( 0, -100 )
+current = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 0, -89 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -42.3787, 692.889 )
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2( -83.0609, 580.019 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="StaticBody2D"]
+position = Vector2( -666.472, 717.087 )
+frames = SubResource( 3 )
+frame = 1
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="StaticBody2D"]
+position = Vector2( 315.449, 717.837 )
+frames = SubResource( 3 )
+frame = 1
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="StaticBody2D"]
+position = Vector2( 1322.37, 717.837 )
+frames = SubResource( 3 )
+frame = 1
+
+[node name="VectorCreator" parent="." instance=ExtResource( 8 )]
+position = Vector2( -14.2539, 0 )
+
+[node name="title" type="Sprite" parent="."]
+position = Vector2( 361.519, -3795.95 )
+texture = ExtResource( 10 )
+
+[node name="Blockers" type="StaticBody2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blockers"]
+position = Vector2( -878.579, -1244.06 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Blockers"]
+position = Vector2( 1690.08, -1110.54 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Blockers"]
+position = Vector2( 489.938, -4502.02 )
+shape = SubResource( 5 )
+
+[node name="Text" type="RichTextLabel" parent="."]
+margin_left = 505.373
+margin_top = 307.791
+margin_right = 1009.37
+margin_bottom = 374.791
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text1" type="RichTextLabel" parent="."]
+margin_left = 486.373
+margin_top = 329.791
+margin_right = 990.373
+margin_bottom = 396.791
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="body_entered" from="StaticBody2D/Area2D" to="VectorCreator" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="StaticBody2D/Area2D" to="VectorCreator" method="_on_Area2D_body_exited"]
+[connection signal="vector_created" from="VectorCreator" to="Whale" method="launch"]

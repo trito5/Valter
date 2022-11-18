@@ -1,0 +1,298 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://VectorCreator.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Ball.tscn" type="PackedScene" id=2]
+[ext_resource path="res://img/egen_par/pc.png" type="Texture" id=3]
+[ext_resource path="res://music/happy_song.wav" type="AudioStream" id=4]
+[ext_resource path="res://p1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Stone1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://img/bgpack_sat/11_background.png" type="Texture" id=7]
+[ext_resource path="res://img/egen_par/pb.png" type="Texture" id=8]
+[ext_resource path="res://World.gd" type="Script" id=9]
+[ext_resource path="res://img/egen_par/pa.png" type="Texture" id=10]
+[ext_resource path="res://img/bgpack_sat/08_clouds.png" type="Texture" id=11]
+[ext_resource path="res://mountain.tscn" type="PackedScene" id=12]
+[ext_resource path="res://spikes.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Finish.tscn" type="PackedScene" id=14]
+[ext_resource path="res://vote1.tscn" type="PackedScene" id=15]
+[ext_resource path="res://vote2.tscn" type="PackedScene" id=16]
+[ext_resource path="res://p2.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Spikes1.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Stone2.tscn" type="PackedScene" id=19]
+[ext_resource path="res://img/water/va.png" type="Texture" id=20]
+[ext_resource path="res://img/water/vc.png" type="Texture" id=21]
+[ext_resource path="res://img/water/vb.png" type="Texture" id=22]
+[ext_resource path="res://img/water/vd.png" type="Texture" id=23]
+[ext_resource path="res://vote3.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Frog.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Spider.tscn" type="PackedScene" id=26]
+[ext_resource path="res://island.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Fyr.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Boat.tscn" type="PackedScene" id=29]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 20 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 21.3313, 9.72089 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 136.927, 10 )
+
+[node name="World" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -11.9865, -323.634 )
+motion_scale = Vector2( 0.1, 0.2 )
+motion_mirroring = Vector2( 1550, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 351.103, 191.996 )
+scale = Vector2( 0.8, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+motion_scale = Vector2( 0.3, 0.2 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 62.9289, 170.807 )
+texture = SubResource( 1 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -11.9865, -323.634 )
+motion_scale = Vector2( 0.5, 0.2 )
+motion_mirroring = Vector2( 2028, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 62.929, 350 )
+texture = ExtResource( 3 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -11.9865, -323.634 )
+motion_scale = Vector2( 0.6, 0.2 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 62.9289, 311.648 )
+texture = ExtResource( 8 )
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -11.9865, -323.634 )
+motion_scale = Vector2( 0.9, 0.2 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2( 62.929, 370 )
+texture = ExtResource( 10 )
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -11.9865, -323.634 )
+motion_scale = Vector2( 0.3, 0.2 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2( 237.588, 554.372 )
+texture = ExtResource( 11 )
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Montain" parent="Objects" instance=ExtResource( 12 )]
+position = Vector2( -92.895, 308.651 )
+
+[node name="p1" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 669.216, 423.862 )
+
+[node name="Fyr" parent="Objects" instance=ExtResource( 28 )]
+position = Vector2( 953.336, 581.875 )
+
+[node name="Stone1" parent="Objects" instance=ExtResource( 6 )]
+position = Vector2( 2398.13, 538.612 )
+
+[node name="Stone2" parent="Objects" instance=ExtResource( 19 )]
+position = Vector2( 1364.01, 548.142 )
+
+[node name="Spikes1" parent="Objects" instance=ExtResource( 18 )]
+position = Vector2( 1860.9, 209.763 )
+
+[node name="StaticBody2D" parent="Objects" instance=ExtResource( 13 )]
+position = Vector2( 2647.95, 570.776 )
+
+[node name="StaticBody2D2" parent="Objects" instance=ExtResource( 13 )]
+position = Vector2( 4219.89, 580.912 )
+
+[node name="Finish" parent="Objects" instance=ExtResource( 14 )]
+position = Vector2( 6677.78, 524.564 )
+
+[node name="vote1" parent="Objects" instance=ExtResource( 15 )]
+position = Vector2( 1183.42, 230.148 )
+
+[node name="vote2" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( 2653.03, 470.171 )
+
+[node name="vote3" parent="Objects" instance=ExtResource( 24 )]
+position = Vector2( 4419.93, 280.722 )
+
+[node name="Groda" parent="Objects" instance=ExtResource( 25 )]
+position = Vector2( 1365.37, 466.403 )
+
+[node name="island" parent="Objects" instance=ExtResource( 27 )]
+position = Vector2( 3185.7, 538.44 )
+
+[node name="Spider" parent="Objects" instance=ExtResource( 26 )]
+position = Vector2( 3781.45, -330.349 )
+
+[node name="p2" parent="Objects" instance=ExtResource( 17 )]
+position = Vector2( 4004.02, 366.653 )
+
+[node name="p3" parent="Objects" instance=ExtResource( 17 )]
+position = Vector2( 3887.62, 391.776 )
+scale = Vector2( 0.8, 1 )
+
+[node name="p4" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 3943.49, 429.159 )
+
+[node name="Boat" parent="Objects" instance=ExtResource( 29 )]
+position = Vector2( 4680.27, 436.825 )
+
+[node name="Stone4" parent="Objects" instance=ExtResource( 19 )]
+position = Vector2( 5167.3, 525.999 )
+
+[node name="Stone3" parent="Objects" instance=ExtResource( 6 )]
+position = Vector2( 5127.31, 544.136 )
+
+[node name="Groda2" parent="Objects" instance=ExtResource( 25 )]
+position = Vector2( 5129.31, 487.975 )
+
+[node name="IslandNSpuders" type="Node2D" parent="Objects"]
+position = Vector2( 5330.11, 0.40802 )
+
+[node name="Spider2" parent="Objects/IslandNSpuders" instance=ExtResource( 26 )]
+position = Vector2( 515.406, -353.634 )
+
+[node name="Spider3" parent="Objects/IslandNSpuders" instance=ExtResource( 26 )]
+position = Vector2( 565.353, -322.714 )
+
+[node name="Spider4" parent="Objects/IslandNSpuders" instance=ExtResource( 26 )]
+position = Vector2( 627.192, -279.903 )
+
+[node name="p4" parent="Objects/IslandNSpuders" instance=ExtResource( 5 )]
+position = Vector2( 607.671, 416.618 )
+
+[node name="p5" parent="Objects/IslandNSpuders" instance=ExtResource( 5 )]
+position = Vector2( 702.444, 417.316 )
+
+[node name="p6" parent="Objects/IslandNSpuders" instance=ExtResource( 5 )]
+position = Vector2( 795.202, 417.316 )
+
+[node name="VectorCreator" parent="." instance=ExtResource( 1 )]
+position = Vector2( 60, 2.149 )
+
+[node name="Whale" parent="." instance=ExtResource( 2 )]
+position = Vector2( 151.454, 545.274 )
+gravity_scale = 5.0
+
+[node name="Camera2D" type="Camera2D" parent="Whale"]
+offset = Vector2( 60, -100 )
+current = true
+smoothing_speed = 1.0
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+mix_target = 2
+
+[node name="Water" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Water"]
+position = Vector2( 607.804, 621.274 )
+frames = SubResource( 2 )
+playing = true
+offset = Vector2( -545.098, 86.0269 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Water"]
+position = Vector2( 1618.26, 621.274 )
+frames = SubResource( 2 )
+frame = 2
+playing = true
+offset = Vector2( -545.098, 86.0269 )
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Water"]
+position = Vector2( 2622.8, 621.274 )
+frames = SubResource( 2 )
+frame = 3
+playing = true
+offset = Vector2( -545.098, 86.0269 )
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="Water"]
+position = Vector2( 3578.26, 621.274 )
+frames = SubResource( 2 )
+frame = 1
+playing = true
+offset = Vector2( -545.098, 86.0269 )
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="Water"]
+position = Vector2( 4579.17, 621.274 )
+frames = SubResource( 2 )
+frame = 3
+playing = true
+offset = Vector2( -545.098, 86.0269 )
+
+[node name="AnimatedSprite7" type="AnimatedSprite" parent="Water"]
+position = Vector2( 5589.62, 621.274 )
+frames = SubResource( 2 )
+frame = 1
+playing = true
+offset = Vector2( -545.098, 86.0269 )
+
+[node name="AnimatedSprite8" type="AnimatedSprite" parent="Water"]
+position = Vector2( 6594.17, 621.274 )
+frames = SubResource( 2 )
+frame = 2
+playing = true
+offset = Vector2( -545.098, 86.0269 )
+
+[node name="AnimatedSprite9" type="AnimatedSprite" parent="Water"]
+position = Vector2( 7549.62, 621.274 )
+frames = SubResource( 2 )
+playing = true
+offset = Vector2( -545.098, 86.0269 )
+
+[node name="AnimatedSprite10" type="AnimatedSprite" parent="Water"]
+position = Vector2( 8552.86, 621.274 )
+frames = SubResource( 2 )
+frame = 3
+playing = true
+offset = Vector2( -545.098, 86.0269 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 0, -8 )
+collision_mask = 2147483650
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1535.05, 698.005 )
+scale = Vector2( 270.966, -13.9996 )
+shape = SubResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Area2D"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/StaticBody2D"]
+position = Vector2( 1504.95, 596.28 )
+scale = Vector2( 42.3438, -2.23238 )
+shape = SubResource( 4 )
+[connection signal="vector_created" from="VectorCreator" to="Whale" method="launch"]
+[connection signal="body_entered" from="Area2D" to="VectorCreator" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="VectorCreator" method="_on_Area2D_body_exited"]

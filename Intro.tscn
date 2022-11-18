@@ -1,0 +1,183 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://music/Val intro.wav" type="AudioStream" id=1]
+[ext_resource path="res://img/egen_par/pa.png" type="Texture" id=2]
+[ext_resource path="res://Intro.gd" type="Script" id=3]
+[ext_resource path="res://img/title.png" type="Texture" id=4]
+[ext_resource path="res://IntroValen.tscn" type="PackedScene" id=5]
+[ext_resource path="res://IntroVectorCreator.tscn" type="PackedScene" id=6]
+[ext_resource path="res://img/egen_par/pc.png" type="Texture" id=7]
+[ext_resource path="res://img/egen_par/pb.png" type="Texture" id=8]
+[ext_resource path="res://img/introval.png" type="Texture" id=9]
+[ext_resource path="res://img/egen_par/bg.png" type="Texture" id=10]
+[ext_resource path="res://img/water/vd.png" type="Texture" id=11]
+[ext_resource path="res://img/water/va.png" type="Texture" id=12]
+[ext_resource path="res://img/water/vb.png" type="Texture" id=13]
+[ext_resource path="res://img/water/vc.png" type="Texture" id=14]
+[ext_resource path="res://music/fxs/splash.wav" type="AudioStream" id=15]
+[ext_resource path="res://IntroVectorCreator.gd" type="Script" id=16]
+[ext_resource path="res://img/text_intro.png" type="Texture" id=17]
+[ext_resource path="res://img/start1.png" type="Texture" id=18]
+[ext_resource path="res://img/start2.png" type="Texture" id=19]
+[ext_resource path="res://img/start3.png" type="Texture" id=20]
+[ext_resource path="res://img/start4.png" type="Texture" id=21]
+[ext_resource path="res://img/start5.png" type="Texture" id=22]
+[ext_resource path="res://img/box_unchecked.png" type="Texture" id=23]
+[ext_resource path="res://img/instru1.png" type="Texture" id=24]
+[ext_resource path="res://img/box_checked.png" type="Texture" id=25]
+[ext_resource path="res://img/instru2.png" type="Texture" id=26]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 76.0803, 393.425 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 923.651, 73.1843 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 662.474, 154.299 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 623.681, 151.76 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 18 ), ExtResource( 22 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "default",
+"speed": 16.0
+} ]
+
+[node name="Intro" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Bg" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Bg"]
+position = Vector2( 512.424, 299.661 )
+texture = ExtResource( 10 )
+
+[node name="Sprite3" type="Sprite" parent="Bg"]
+position = Vector2( 774.897, 284.227 )
+texture = ExtResource( 7 )
+
+[node name="Sprite4" type="Sprite" parent="Bg"]
+position = Vector2( 719.47, 301.624 )
+texture = ExtResource( 8 )
+
+[node name="Sprite2" type="Sprite" parent="Bg"]
+position = Vector2( 511.945, 350.725 )
+texture = ExtResource( 2 )
+
+[node name="IntroMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -10.0
+autoplay = true
+
+[node name="Start" type="Node2D" parent="."]
+
+[node name="IntroVal" type="Sprite" parent="Start"]
+position = Vector2( 512.43, 301.495 )
+texture = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Start"]
+position = Vector2( 551.941, 392 )
+texture = ExtResource( 17 )
+
+[node name="Training" type="Node2D" parent="."]
+visible = false
+
+[node name="inviBorders" type="StaticBody2D" parent="Training"]
+collision_mask = 2
+
+[node name="left" type="CollisionShape2D" parent="Training/inviBorders"]
+position = Vector2( -57.211, 347.504 )
+shape = SubResource( 1 )
+
+[node name="right" type="CollisionShape2D" parent="Training/inviBorders"]
+position = Vector2( 1067.94, 372.931 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Training/inviBorders"]
+position = Vector2( 440.737, -50.8542 )
+shape = SubResource( 2 )
+
+[node name="Instruktioner1" type="Sprite" parent="Training"]
+position = Vector2( 526.087, 326.936 )
+texture = ExtResource( 24 )
+
+[node name="Instruktioner2" type="Sprite" parent="Training"]
+visible = false
+position = Vector2( 523.258, 329.764 )
+texture = ExtResource( 26 )
+
+[node name="Box1" type="Sprite" parent="Training"]
+position = Vector2( 242.071, 284.479 )
+texture = ExtResource( 23 )
+
+[node name="Box2" type="Sprite" parent="Training"]
+position = Vector2( 242.071, 359.394 )
+texture = ExtResource( 23 )
+
+[node name="Box3" type="Sprite" parent="Training"]
+visible = false
+position = Vector2( 242.071, 284.479 )
+texture = ExtResource( 25 )
+
+[node name="Box4" type="Sprite" parent="Training"]
+visible = false
+position = Vector2( 242.071, 359.394 )
+texture = ExtResource( 25 )
+
+[node name="Whale" parent="Training" instance=ExtResource( 5 )]
+position = Vector2( 328.238, 480.832 )
+gravity_scale = 5.0
+
+[node name="Aqua" type="RigidBody2D" parent="Training"]
+collision_mask = 2
+mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Training/Aqua"]
+position = Vector2( 517.333, 659.323 )
+shape = SubResource( 3 )
+
+[node name="Vatten" type="AnimatedSprite" parent="Training/Aqua"]
+position = Vector2( 514, 646 )
+frames = SubResource( 4 )
+frame = 2
+playing = true
+
+[node name="WaterArea2D" type="Area2D" parent="Training/Aqua"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Training/Aqua/WaterArea2D"]
+position = Vector2( 568, 650 )
+shape = SubResource( 5 )
+
+[node name="VectorCreator" parent="Training" instance=ExtResource( 6 )]
+collision_mask = 2
+script = ExtResource( 16 )
+
+[node name="Titel" type="Sprite" parent="."]
+position = Vector2( 528.916, 339.411 )
+texture = ExtResource( 4 )
+
+[node name="Splash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -10.0
+
+[node name="StartText" type="AnimatedSprite" parent="."]
+position = Vector2( 958.485, 569.054 )
+frames = SubResource( 6 )
+frame = 4
+playing = true
+[connection signal="body_entered" from="Training/Aqua/WaterArea2D" to="Training/VectorCreator" method="_on_WaterArea2D_body_entered"]
+[connection signal="body_exited" from="Training/Aqua/WaterArea2D" to="Training/VectorCreator" method="_on_WaterArea2D_body_exited"]
+[connection signal="vector_created" from="Training/VectorCreator" to="Training/Whale" method="launch"]

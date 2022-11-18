@@ -1,0 +1,85 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://IntroValen.gd" type="Script" id=1]
+[ext_resource path="res://img/whale.png" type="Texture" id=2]
+[ext_resource path="res://img/whale_air.png" type="Texture" id=3]
+[ext_resource path="res://img/whale_down.png" type="Texture" id=4]
+[ext_resource path="res://img/whale_tear1.png" type="Texture" id=5]
+[ext_resource path="res://img/whale_tear2.png" type="Texture" id=6]
+[ext_resource path="res://img/whale_tear3.png" type="Texture" id=7]
+[ext_resource path="res://music/fxs/dash3.wav" type="AudioStream" id=8]
+[ext_resource path="res://music/fxs/splash.wav" type="AudioStream" id=9]
+[ext_resource path="res://img/splash1.png" type="Texture" id=10]
+[ext_resource path="res://img/splash2.png" type="Texture" id=11]
+[ext_resource path="res://img/whale_ouch2.png" type="Texture" id=12]
+[ext_resource path="res://img/whale_ouch1.png" type="Texture" id=13]
+[ext_resource path="res://img/whale_ouch3.png" type="Texture" id=14]
+[ext_resource path="res://music/fxs/jump.wav" type="AudioStream" id=15]
+[ext_resource path="res://img/spray.png" type="Texture" id=19]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 25.8326
+height = 29.6696
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "chill",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 14 ) ],
+"loop": false,
+"name": "ouch",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "fly",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": false,
+"name": "splash",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "tear",
+"speed": 5.0
+} ]
+
+[node name="Whale" type="RigidBody2D"]
+collision_layer = 2
+mode = 2
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -8.1674, -5.3326 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="AnimatedVal" type="AnimatedSprite" parent="."]
+position = Vector2( -14, -7 )
+frames = SubResource( 2 )
+animation = "ouch"
+frame = 2
+playing = true
+
+[node name="Splash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -15.241
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -10.546
+
+[node name="Spray" type="Sprite" parent="."]
+visible = false
+position = Vector2( -1.38615, -47.8111 )
+texture = ExtResource( 19 )
+
+[node name="Dash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -10.0
+[connection signal="animation_finished" from="AnimatedVal" to="." method="_on_AnimatedVal_animation_finished"]
